@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png -text
+*.bcmap -text
+*.ttf -text
+*.otf -text
+*.pfb -text
+*.wasm -text

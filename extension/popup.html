@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>清译</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="icons/48.png" width="40" height="40" alt="" />
+      <div>
+        <h1>清译 <span>FREE</span></h1>
+        <p>读懂外语，也保留原文</p>
+      </div>
+    </header>
+    <section class="direction">
+      <span>自动识别原文</span><b aria-hidden="true">→</b><span>简体中文</span>
+    </section>
+    <label for="engine">翻译方式</label>
+    <select id="engine">
+      <option value="microsoft">微软翻译 · 免费免密钥</option>
+      <option value="google">Google 翻译 · 免费免密钥</option>
+      <option value="tencent">腾讯交互翻译 · 免费免密钥</option>
+      <option value="local">浏览器本地翻译 · 仅英文</option>
+    </select>
+    <p id="engine-note" class="note">待译文字将发送至微软翻译服务。</p>
+    <label class="toggle" for="show-ball"
+      ><span>显示网页悬浮球</span><input id="show-ball" type="checkbox" checked
+    /></label>
+    <label class="toggle" for="auto-english"
+      ><span>自动翻译外语网页</span><input id="auto-english" type="checkbox"
+    /></label>
+    <label class="toggle" for="selection-auto"
+      ><span>划词后自动翻译</span
+      ><input id="selection-auto" type="checkbox" checked
+    /></label>
+    <label class="toggle" for="video-subtitles"
+      ><span>翻译视频字幕</span
+      ><input id="video-subtitles" type="checkbox" checked
+    /></label>
+    <label class="toggle" for="preserve-navigation"
+      ><span>保留导航栏原样</span
+      ><input id="preserve-navigation" type="checkbox" checked
+    /></label>
+    <button id="page" class="primary">翻译当前网页 <span>↗</span></button>
+    <div class="row">
+      <button id="selection">划词翻译</button
+      ><button id="restore">恢复原文</button><button id="pdf">PDF 翻译</button>
+    </div>
+    <p id="status" role="status">按段落双语对照，滚动时继续翻译。</p>
+    <footer><span>无需注册 · 无广告</span><kbd>Alt + Shift + T</kbd></footer>
+    <script src="popup.js"></script>
+  </body>
+</html>

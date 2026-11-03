@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>清译 · PDF 对照阅读</title>
+    <link rel="stylesheet" href="pdf.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>清译 <span>PDF 对照阅读</span></h1>
+        <p>保留原页，中文在旁边</p>
+      </div>
+      <div class="tools">
+        <label class="file-button"
+          >打开 PDF<input
+            id="file"
+            type="file"
+            accept="application/pdf,.pdf" /></label
+        ><select id="engine" aria-label="PDF翻译引擎">
+          <option value="microsoft">微软 · 自动识别</option>
+          <option value="google">Google · 自动识别</option>
+          <option value="tencent">腾讯 · 自动识别</option></select
+        ><button id="pause" hidden>暂停翻译</button>
+      </div>
+    </header>
+    <div class="document-info">
+      <strong id="filename">选择文字版 PDF</strong
+      ><span id="status" role="status"
+        >文件在本机读取，仅待译文字发送至所选翻译服务。</span
+      >
+    </div>
+    <main id="pages">
+      <section class="empty">
+        <div class="pdf-symbol">PDF</div>
+        <h2>打开文件，开始双语阅读</h2>
+        <p>支持可复制文字的 PDF，最大 100 MB。扫描图片暂不支持。</p>
+        <p>从网页下载 PDF 后，点击上方“打开 PDF”。</p>
+      </section>
+    </main>
+    <script src="languages.js"></script>
+    <script type="module" src="pdf.js"></script>
+  </body>
+</html>

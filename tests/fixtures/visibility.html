@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Generic visibility regression</title>
+<style>body{font:16px/1.7 Arial;color:#183d59;margin:40px}main{max-width:650px;margin:auto}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.clipped{position:absolute;clip-path:inset(50%);width:120px;height:40px}.hidden{display:none}.partial{clip-path:inset(0 0 0 5%)}.overflow{overflow:hidden;max-height:75px;border:1px solid #ddd}.contents{display:contents}</style>
+<div class="sr-only"><h2>Hidden keyboard shortcut helper</h2></div><h2 class="clipped">Hidden clipping helper</h2>
+<div style="opacity:0"><p>Hidden transparent helper</p></div><div style="content-visibility:hidden"><p>Hidden content visibility helper</p></div>
+<div hidden><p>Hidden native attribute helper</p></div><div inert><p>Hidden inert helper</p></div><div aria-hidden="true"><p>Hidden accessible helper</p></div>
+<main><p id="normal">Please <a href="https://example.org/docs">read the documentation</a> before <strong>turning off the power</strong>.<span class="hidden"> Hidden nested secret</span></p>
+<p id="partial" class="partial">A partially clipped paragraph is still readable.</p>
+<div class="contents"><p id="contents">A paragraph within display contents remains readable.</p></div>
+<div style="visibility:hidden"><p id="visible-override" style="visibility:visible">A visible child can override inherited visibility.</p></div>
+<p id="static-clip" style="clip:rect(0,0,0,0)">Legacy clip has no effect on a static paragraph.</p>
+<div id="overflow" class="overflow">An ordinary clipped container keeps its translation within the same container.</div>
+<p id="pending">This visible paragraph will become hidden while translation is pending.</p>
+<div class="hidden" id="reveal"><p>A revealed paragraph should translate automatically.</p></div>
+<div style="height:3000px"></div><p id="far">This paragraph is translated when scrolling approaches the bottom.</p></main></html>
